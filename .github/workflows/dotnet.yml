@@ -32,4 +32,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: WebAppDevOps
-        path: /bin/Debug/net6.0-windows
+        path: /bin/Debug
