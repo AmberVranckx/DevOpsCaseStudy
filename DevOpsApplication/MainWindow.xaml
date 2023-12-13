@@ -6,38 +6,38 @@
         xmlns:local="clr-namespace:DevOpsApplication"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="teamTextChange1">
+    <Grid x:Name="teamTextChange1" Background="#FF9EC998">
         <Label x:Name="name" Content="Firstname:&#xD;&#xA;" HorizontalAlignment="Left" Margin="13,17,0,0" VerticalAlignment="Top" FontSize="22" Height="47"/>
-        <TextBox x:Name="firstnameText" HorizontalAlignment="Left" Margin="132,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="33" RenderTransformOrigin="0.523,0.801"/>
-        <Button x:Name="informatie" Content="Information" HorizontalAlignment="Left" Margin="22,105,0,0" VerticalAlignment="Top" Height="51" Width="134" FontSize="22" Click="information_Click"/>
-        <ListBox x:Name="informationList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="15,283,534,10" Visibility="visible"/>
+        <TextBox x:Name="firstnameText" HorizontalAlignment="Left" Margin="132,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="33" RenderTransformOrigin="0.523,0.801" BorderBrush="Black"/>
+        <Button x:Name="informatie" Content="Information" HorizontalAlignment="Left" Margin="22,105,0,0" VerticalAlignment="Top" Height="51" Width="134" FontSize="22" Click="information_Click" Background="DarkOliveGreen" Foreground="White" BorderBrush="Black" GotFocus="informatie_GotFocus" LostFocus="informatie_LostFocus"/>
+        <ListBox x:Name="informationList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="15,283,534,10" Visibility="visible" BorderBrush="Black"/>
         <Label x:Name="lastname" Content="Lastname:&#xD;&#xA;" HorizontalAlignment="Left" Margin="15,57,0,0" VerticalAlignment="Top" FontSize="22" Height="41"/>
-        <TextBox x:Name="lastnameText" HorizontalAlignment="Left" Margin="132,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="34"/>
-        <Label x:Name="team" Content="Team:" HorizontalAlignment="Left" Margin="56,169,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox x:Name="teamText" HorizontalAlignment="Left" Margin="132,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="34"/>
-        <Button x:Name="teamInfo" Content="Information" HorizontalAlignment="Left" Margin="22,217,0,0" VerticalAlignment="Top" Height="51" Width="134" FontSize="22" Click="teamInfo_Click"/>
-        <Button x:Name="add" Content="Add" HorizontalAlignment="Left" Margin="477,382,0,0" VerticalAlignment="Top" Height="34" Width="134" FontSize="22" Click="add_Click"/>
-        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Margin="642,382,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.204,-0.903" Height="34" Width="134" FontSize="22" Click="delete_Click"/>
+        <TextBox x:Name="lastnameText" HorizontalAlignment="Left" Margin="132,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="34" BorderBrush="Black"/>
+        <Label x:Name="team" Content="Team:" HorizontalAlignment="Left" Margin="57,169,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <TextBox x:Name="teamText" HorizontalAlignment="Left" Margin="132,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="34" BorderBrush="Black"/>
+        <Button x:Name="teamInfo" Content="Information" HorizontalAlignment="Left" Margin="22,217,0,0" VerticalAlignment="Top" Height="51" Width="134" FontSize="22" Click="teamInfo_Click" Background="DarkOliveGreen" BorderBrush="Black" Foreground="White" GotFocus="teamInfo_GotFocus" LostFocus="teamInfo_LostFocus"/>
+        <Button x:Name="add" Content="Add" HorizontalAlignment="Left" Margin="477,382,0,0" VerticalAlignment="Top" Height="34" Width="134" FontSize="22" Click="add_Click" Background="DarkOliveGreen" BorderBrush="Black" Foreground="White" GotFocus="add_GotFocus" LostFocus="add_LostFocus"/>
+        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Margin="642,382,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.204,-0.903" Height="34" Width="134" FontSize="22" Click="delete_Click" Background="DarkOliveGreen" BorderBrush="Black" Foreground="White" GotFocus="delete_GotFocus" LostFocus="delete_LostFocus"/>
         <Label x:Name="firstnameChange" Content="Firstname:&#xA;" HorizontalAlignment="Left" Margin="444,38,0,0" VerticalAlignment="Top" FontSize="22" Height="47"/>
         <Label x:Name="lastnameChange" Content="Lastname:&#xA;" HorizontalAlignment="Left" Margin="446,81,0,0" VerticalAlignment="Top" FontSize="22" Height="40"/>
         <Label x:Name="teamChange" Content="Team:" HorizontalAlignment="Left" Margin="478,117,0,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="0.556,0.197"/>
-        <TextBox x:Name="firstnameTextChange" HorizontalAlignment="Left" Margin="566,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="33"/>
-        <TextBox x:Name="lastnameTextChange" HorizontalAlignment="Left" Margin="566,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="34"/>
-        <TextBox x:Name="teamTextChange" HorizontalAlignment="Left" Margin="566,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="36"/>
+        <TextBox x:Name="firstnameTextChange" HorizontalAlignment="Left" Margin="566,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="33" BorderBrush="Black"/>
+        <TextBox x:Name="lastnameTextChange" HorizontalAlignment="Left" Margin="566,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="34" BorderBrush="Black"/>
+        <TextBox x:Name="teamTextChange" HorizontalAlignment="Left" Margin="566,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="36" BorderBrush="Black"/>
         <Label x:Name="addressChange" Content="Address:" HorizontalAlignment="Left" Margin="461,163,0,0" VerticalAlignment="Top" FontSize="22"/>
         <Label x:Name="zipcodeChange" Content="Zipcode:" HorizontalAlignment="Left" Margin="460,205,0,0" VerticalAlignment="Top" FontSize="22"/>
         <Label x:Name="cityChange" Content="City:" HorizontalAlignment="Left" Margin="501,244,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <Label x:Name="emailChange" Content="Email:" Margin="487,283,246,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="0.561,0.217"/>
-        <TextBox x:Name="addressTextChange" HorizontalAlignment="Left" Margin="566,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="37"/>
-        <TextBox x:Name="zipcodeTextChange" HorizontalAlignment="Left" Margin="566,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="37" RenderTransformOrigin="0.491,1.33"/>
-        <TextBox x:Name="cityTextChange" HorizontalAlignment="Left" Margin="566,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="38"/>
-        <TextBox x:Name="emailTextChange" HorizontalAlignment="Left" Margin="566,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="37"/>
+        <Label x:Name="emailChange" Content="Email:" Margin="486,291,247,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="0.561,0.217"/>
+        <TextBox x:Name="addressTextChange" HorizontalAlignment="Left" Margin="566,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="37" BorderBrush="Black"/>
+        <TextBox x:Name="zipcodeTextChange" HorizontalAlignment="Left" Margin="566,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="37" RenderTransformOrigin="0.491,1.33" BorderBrush="Black"/>
+        <TextBox x:Name="cityTextChange" HorizontalAlignment="Left" Margin="566,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="38" BorderBrush="Black"/>
+        <TextBox x:Name="emailTextChange" HorizontalAlignment="Left" Margin="566,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="37" BorderBrush="Black"/>
         <Image x:Name="imgMember" HorizontalAlignment="Left" Height="100" Margin="290,297,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="199,105,0,0" VerticalAlignment="Top" Height="51" Width="134" FontSize="22" Click="btnClear_Click"/>
-        <Button x:Name="btnClear1" Content="Clear" HorizontalAlignment="Left" Margin="199,217,0,0" VerticalAlignment="Top" Height="51" Width="134" FontSize="22" Click="btnClear_Click"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="199,105,0,0" VerticalAlignment="Top" Height="51" Width="134" FontSize="22" Click="btnClear_Click" BorderBrush="Black" Background="DarkOliveGreen" Foreground="White" GotFocus="btnClear_GotFocus" LostFocus="btnClear_LostFocus"/>
+        <Button x:Name="btnClear1" Content="Clear" HorizontalAlignment="Left" Margin="199,217,0,0" VerticalAlignment="Top" Height="51" Width="134" FontSize="22" Click="btnClear_Click" Background="DarkOliveGreen" BorderBrush="Black" Foreground="White" GotFocus="btnClear1_GotFocus" LostFocus="btnClear1_LostFocus"/>
         <Label x:Name="Title" Content="Enter the name, surname and address to remove someone" HorizontalAlignment="Left" Margin="298,7,0,0" VerticalAlignment="Top" FontSize="18" Width="492" Height="33"/>
         <Label x:Name="imageChange" Content="Image:" HorizontalAlignment="Left" Margin="479,334,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox x:Name="imageTextChange" HorizontalAlignment="Left" Margin="566,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="39"/>
+        <TextBox x:Name="imageTextChange" HorizontalAlignment="Left" Margin="566,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="39" BorderBrush="Black"/>
 
     </Grid>
 </Window>

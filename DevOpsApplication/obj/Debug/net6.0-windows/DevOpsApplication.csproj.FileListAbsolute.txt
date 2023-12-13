@@ -78,3 +78,4 @@ C:\Users\amber\OneDrive - Thomas More\2APPAI\DevOps & Security\DevOpsApplication
 C:\Users\amber\OneDrive - Thomas More\2APPAI\DevOps & Security\DevOpsApplication\DevOpsApplication\bin\Debug\net6.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
 C:\Users\amber\OneDrive - Thomas More\2APPAI\DevOps & Security\DevOpsApplication\DevOpsApplication\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\amber\OneDrive - Thomas More\2APPAI\DevOps & Security\DevOpsApplication\DevOpsApplication\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\amber\OneDrive - Thomas More\2APPAI\DevOps & Security\DevOpsApplication\DevOpsApplication\obj\Debug\net6.0-windows\DevOpsApplication.sourcelink.json

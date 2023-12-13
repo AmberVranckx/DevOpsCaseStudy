@@ -25,6 +25,23 @@ namespace DevOpsApplication
         public MainWindow()
         {
             InitializeComponent();
+            firstnameText.TabIndex = 0;
+            lastnameText.TabIndex = 1;
+            informatie.TabIndex = 2;
+            btnClear.TabIndex = 3;
+            teamText.TabIndex = 4;
+            teamInfo.TabIndex = 5;
+            btnClear1.TabIndex = 6;
+            firstnameTextChange.TabIndex = 7;
+            lastnameTextChange.TabIndex = 8;
+            teamTextChange.TabIndex = 9;
+            addressTextChange.TabIndex = 10;
+            zipcodeTextChange.TabIndex = 11;
+            cityTextChange.TabIndex = 12;
+            emailTextChange.TabIndex = 13;
+            imageTextChange.TabIndex = 14;
+            add.TabIndex = 15;
+            delete.TabIndex = 16;
         }
 
 
@@ -320,6 +337,88 @@ namespace DevOpsApplication
             informationList.Items.Clear();
             imgMember.Visibility = Visibility.Hidden;
             imgMember.Source = null;
+        }
+
+        private void informatie_MouseEnter(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void informatie_MouseLeave(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void informatie_GotFocus(object sender, RoutedEventArgs e)
+        {
+            informatie.Background = Brushes.White;
+            informatie.Foreground = Brushes.DarkOliveGreen;
+        }
+
+        private void informatie_LostFocus(object sender, RoutedEventArgs e)
+        {
+            informatie.Background = Brushes.DarkOliveGreen;
+            informatie.Foreground = Brushes.White;
+        }
+
+        private void btnClear_GotFocus(object sender, RoutedEventArgs e)
+        {
+            btnClear.Background = Brushes.White;
+            btnClear.Foreground = Brushes.DarkOliveGreen;
+        }
+
+        private void btnClear_LostFocus(object sender, RoutedEventArgs e)
+        {
+            btnClear.Background = Brushes.DarkOliveGreen;
+            btnClear.Foreground = Brushes.White;
+        }
+
+        private void teamInfo_GotFocus(object sender, RoutedEventArgs e)
+        {
+            teamInfo.Background = Brushes.White;
+            teamInfo.Foreground = Brushes.DarkOliveGreen;
+        }
+
+        private void teamInfo_LostFocus(object sender, RoutedEventArgs e)
+        {
+            teamInfo.Background = Brushes.DarkOliveGreen;
+            teamInfo.Foreground = Brushes.White;
+        }
+
+        private void btnClear1_GotFocus(object sender, RoutedEventArgs e)
+        {
+            btnClear1.Background = Brushes.White;
+            btnClear1.Foreground = Brushes.DarkOliveGreen;
+        }
+
+        private void btnClear1_LostFocus(object sender, RoutedEventArgs e)
+        {
+            btnClear1.Background = Brushes.DarkOliveGreen;
+            btnClear1.Foreground = Brushes.White;
+        }
+
+        private void add_GotFocus(object sender, RoutedEventArgs e)
+        {
+            add.Background = Brushes.White;
+            add.Foreground = Brushes.DarkOliveGreen;
+        }
+
+        private void add_LostFocus(object sender, RoutedEventArgs e)
+        {
+            add.Background = Brushes.DarkOliveGreen;
+            add.Foreground = Brushes.White;
+        }
+
+        private void delete_GotFocus(object sender, RoutedEventArgs e)
+        {
+            delete.Background = Brushes.White;
+            delete.Foreground = Brushes.DarkOliveGreen;
+        }
+
+        private void delete_LostFocus(object sender, RoutedEventArgs e)
+        {
+            delete.Background = Brushes.DarkOliveGreen;
+            delete.Foreground = Brushes.White;
         }
     }
 }
