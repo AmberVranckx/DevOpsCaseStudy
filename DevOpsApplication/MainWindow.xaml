@@ -352,14 +352,13 @@
         <Button Style="{DynamicResource ButtonStyleDelete}" x:Name="delete" Content="Delete" HorizontalAlignment="Left" Margin="642,382,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.204,-0.903" Height="34" Width="134" FontSize="22" Click="delete_Click" Background="DarkOliveGreen" BorderBrush="Black" Foreground="White" GotFocus="delete_GotFocus" LostFocus="delete_LostFocus" FontFamily="Arial"/>
         <Label x:Name="firstnameChange" Content="Firstname:&#xA;" HorizontalAlignment="Left" Margin="444,38,0,0" VerticalAlignment="Top" FontSize="22" Height="47" FontFamily="Arial"/>
         <Label x:Name="lastnameChange" Content="Lastname:&#xA;" HorizontalAlignment="Left" Margin="446,81,0,0" VerticalAlignment="Top" FontSize="22" Height="40" FontFamily="Arial"/>
-        <Label x:Name="teamChange" Content="Team:" HorizontalAlignment="Left" Margin="478,117,0,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="0.556,0.197" FontFamily="Arial"/>
+        <Label x:Name="teamChange" Content="Team:" HorizontalAlignment="Left" Margin="482,117,0,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="0.556,0.197" FontFamily="Arial"/>
         <TextBox x:Name="firstnameTextChange" HorizontalAlignment="Left" Margin="566,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="33" BorderBrush="Black"/>
         <TextBox x:Name="lastnameTextChange" HorizontalAlignment="Left" Margin="566,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="34" BorderBrush="Black"/>
         <TextBox x:Name="teamTextChange" HorizontalAlignment="Left" Margin="566,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="36" BorderBrush="Black"/>
         <Label x:Name="addressChange" Content="Address:" HorizontalAlignment="Left" Margin="461,163,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Arial"/>
         <Label x:Name="zipcodeChange" Content="Zipcode:" HorizontalAlignment="Left" Margin="460,205,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Arial"/>
-        <Label x:Name="cityChange" Content="City:" HorizontalAlignment="Left" Margin="501,244,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Arial"/>
-        <Label x:Name="emailChange" Content="Email:" Margin="486,291,247,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="0.561,0.217" FontFamily="Arial"/>
+        <Label x:Name="cityChange" Content="City:" HorizontalAlignment="Left" Margin="502,252,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Arial"/>
         <TextBox x:Name="addressTextChange" HorizontalAlignment="Left" Margin="566,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="37" BorderBrush="Black"/>
         <TextBox x:Name="zipcodeTextChange" HorizontalAlignment="Left" Margin="566,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="37" RenderTransformOrigin="0.491,1.33" BorderBrush="Black"/>
         <TextBox x:Name="cityTextChange" HorizontalAlignment="Left" Margin="566,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="38" BorderBrush="Black"/>
@@ -370,6 +369,7 @@
         <Label x:Name="Title" Content="Enter the name, surname and address to remove someone" HorizontalAlignment="Left" Margin="298,7,0,0" VerticalAlignment="Top" FontSize="18" Width="492" Height="33" FontFamily="Arial"/>
         <Label x:Name="imageChange" Content="Image:" HorizontalAlignment="Left" Margin="479,334,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Arial"/>
         <TextBox x:Name="imageTextChange" HorizontalAlignment="Left" Margin="566,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="39" BorderBrush="Black"/>
+        <Label x:Name="emailChange" Content="Email:" HorizontalAlignment="Left" Margin="485,293,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Arial"/>
 
     </Grid>
 </Window>

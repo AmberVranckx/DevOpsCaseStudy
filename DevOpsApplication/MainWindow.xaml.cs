@@ -286,7 +286,7 @@ namespace DevOpsApplication
 
                             command.ExecuteNonQuery();
 
-                            MessageBox.Show("the user " + firstnameTextChange.Text + " " + lastnameTextChange.Text + " has been added");
+                            MessageBox.Show("The member " + firstnameTextChange.Text + " " + lastnameTextChange.Text + " has been added");
 
                             firstnameTextChange.Clear();
                             lastnameTextChange.Clear();
@@ -324,7 +324,7 @@ namespace DevOpsApplication
                 command.Parameters.AddWithValue("$address", addressTextChange.Text);
                 command.ExecuteNonQuery();
 
-                MessageBox.Show("the user " + firstnameTextChange.Text + " " + lastnameTextChange.Text + " has been deleted");
+                MessageBox.Show("The member " + firstnameTextChange.Text + " " + lastnameTextChange.Text + " has been deleted");
                 firstnameTextChange.Clear();
                 lastnameTextChange.Clear();
                 addressTextChange.Clear();
