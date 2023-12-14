@@ -6,10 +6,67 @@
         xmlns:local="clr-namespace:DevOpsApplication"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyleInformation" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid x:Name="teamTextChange1" Background="#FF9EC998">
         <Label x:Name="name" Content="Firstname:&#xD;&#xA;" HorizontalAlignment="Left" Margin="13,17,0,0" VerticalAlignment="Top" FontSize="22" Height="47"/>
         <TextBox x:Name="firstnameText" HorizontalAlignment="Left" Margin="132,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="33" RenderTransformOrigin="0.523,0.801" BorderBrush="Black"/>
-        <Button x:Name="informatie" Content="Information" HorizontalAlignment="Left" Margin="22,105,0,0" VerticalAlignment="Top" Height="51" Width="134" FontSize="22" Click="information_Click" Background="DarkOliveGreen" Foreground="White" BorderBrush="Black" GotFocus="informatie_GotFocus" LostFocus="informatie_LostFocus"/>
+        <Button Style="{DynamicResource ButtonStyleInformation}" x:Name="informatie" Content="Information" HorizontalAlignment="Left" Margin="22,105,0,0" VerticalAlignment="Top" Height="51" Width="134" FontSize="22" Click="information_Click" Background="DarkOliveGreen" Foreground="White" BorderBrush="Black" GotFocus="informatie_GotFocus" LostFocus="informatie_LostFocus"/>
         <ListBox x:Name="informationList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="15,283,534,10" Visibility="visible" BorderBrush="Black"/>
         <Label x:Name="lastname" Content="Lastname:&#xD;&#xA;" HorizontalAlignment="Left" Margin="15,57,0,0" VerticalAlignment="Top" FontSize="22" Height="41"/>
         <TextBox x:Name="lastnameText" HorizontalAlignment="Left" Margin="132,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="34" BorderBrush="Black"/>
