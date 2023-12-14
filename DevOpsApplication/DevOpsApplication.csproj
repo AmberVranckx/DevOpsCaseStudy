@@ -16,10 +16,13 @@
     <None Remove="jack.png" />
     <None Remove="jef.png" />
     <None Remove="liam.png" />
+    <None Remove="lucas.png" />
     <None Remove="mila.png" />
     <None Remove="noor.png" />
+    <None Remove="olivia.png" />
     <None Remove="oscar.png" />
     <None Remove="sara.png" />
+    <None Remove="vic.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,10 +39,13 @@
     <Resource Include="jack.png" />
     <Resource Include="jef.png" />
     <Resource Include="liam.png" />
+    <Resource Include="lucas.png" />
     <Resource Include="mila.png" />
     <Resource Include="noor.png" />
+    <Resource Include="olivia.png" />
     <Resource Include="oscar.png" />
     <Resource Include="sara.png" />
+    <Resource Include="vic.png" />
   </ItemGroup>
 
 </Project>
