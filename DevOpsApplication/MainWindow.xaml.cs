@@ -140,37 +140,45 @@ namespace DevOpsApplication
             {
                 connection.Open();
 
+                if(teamText.Text == "")
+                {
+                    MessageBox.Show("Enter a team");
+                    return;
+                }
+                else { 
+
                 var command = connection.CreateCommand();
                 command.CommandText =
                 @"
-                    SELECT m.Name, m.lastname, m.address, m.zipcode, m.city, m.email
+                    SELECT m.Name, m.lastname
                     FROM Teams t join Members m on m.TeamId = t.Id 
                     WHERE t.name = $name
                 ";
                 command.Parameters.AddWithValue("$name", teamText.Text);
                 informationList.Items.Clear();
 
-                using (var reader = command.ExecuteReader())
-                {
-                    if (reader.HasRows)
+                    using (var reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
+                        if (reader.HasRows)
                         {
-                            var firstname = reader.GetString(0);
-                            var lastname = reader.GetString(1);
+                            while (reader.Read())
+                            {
+                                var firstname = reader.GetString(0);
+                                var lastname = reader.GetString(1);
 
 
-                            informationList.Visibility = Visibility.Visible;
+                                informationList.Visibility = Visibility.Visible;
 
-                            informationList.Items.Add(firstname + " " + lastname);
-                            teamText.Clear();
+                                informationList.Items.Add(firstname + " " + lastname);
+                                teamText.Clear();
 
+                            }
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No team found with the name " + teamText.Text);
-                        teamText.Clear();
+                        else
+                        {
+                            MessageBox.Show("No team found with the name " + teamText.Text);
+                            teamText.Clear();
+                        }
                     }
                 }
             }
@@ -183,98 +191,108 @@ namespace DevOpsApplication
             {
                 connection.Open();
 
-                var commandName = connection.CreateCommand();
-                commandName.CommandText =
-                @"
-                    SELECT Id from Teams where name = $name
-                ";
-                commandName.Parameters.AddWithValue("$name", teamTextChange.Text);
-
-                using (var reader = commandName.ExecuteReader())
+                if (teamTextChange.Text == "")
                 {
-                    if (reader.HasRows)
+                    MessageBox.Show("Enter a team");
+                    return;
+                }
+
+                else
+                {
+
+                    var commandName = connection.CreateCommand();
+                    commandName.CommandText =
+                    @"
+                    SELECT Id from Teams where name = $name
+                    ";
+                    commandName.Parameters.AddWithValue("$name", teamTextChange.Text);
+
+                    using (var reader = commandName.ExecuteReader())
                     {
-                        while (reader.Read())
+                        if (reader.HasRows)
                         {
-                            var id = reader.GetString(0);
+                            while (reader.Read())
+                            {
+                                var id = reader.GetString(0);
 
 
-                            var command = connection.CreateCommand();
-                            command.CommandText =
-                            @"
+                                var command = connection.CreateCommand();
+                                command.CommandText =
+                                @"
                                 INSERT INTO Members (Name, Lastname, address, zipcode, city, email, image, teamId)
                                 VALUES ($name, $lastname, $address, $zipcode, $city, $email, $image, $teamId)
                             ";
 
-                            if (firstnameTextChange.Text == "")
-                            {
-                                MessageBox.Show("Enter a firstname");
-                                return;
-                            }
-                            else
-                            {
-                                command.Parameters.AddWithValue("$name", firstnameTextChange.Text);
-                                if (lastnameTextChange.Text == "")
+                                if (firstnameTextChange.Text == "")
                                 {
-                                    MessageBox.Show("Enter a lastname");
+                                    MessageBox.Show("Enter a firstname");
                                     return;
-                                    
                                 }
                                 else
                                 {
-                                    command.Parameters.AddWithValue("$lastname", lastnameTextChange.Text);
-                                    if (addressTextChange.Text == "")
+                                    command.Parameters.AddWithValue("$name", firstnameTextChange.Text);
+                                    if (lastnameTextChange.Text == "")
                                     {
-                                        MessageBox.Show("Enter an address");
+                                        MessageBox.Show("Enter a lastname");
                                         return;
+
                                     }
                                     else
                                     {
-                                        command.Parameters.AddWithValue("$address", addressTextChange.Text);
-                                        if (zipcodeTextChange.Text == "")
+                                        command.Parameters.AddWithValue("$lastname", lastnameTextChange.Text);
+                                        if (addressTextChange.Text == "")
                                         {
-                                            MessageBox.Show("Enter a zipcode");
+                                            MessageBox.Show("Enter an address");
                                             return;
                                         }
                                         else
                                         {
-                                            command.Parameters.AddWithValue("$zipcode", zipcodeTextChange.Text);
-
-                                            if (cityTextChange.Text == "")
+                                            command.Parameters.AddWithValue("$address", addressTextChange.Text);
+                                            if (zipcodeTextChange.Text == "")
                                             {
-                                                MessageBox.Show("Enter a city");
+                                                MessageBox.Show("Enter a zipcode");
                                                 return;
                                             }
                                             else
                                             {
-                                                command.Parameters.AddWithValue("$city", cityTextChange.Text);
+                                                command.Parameters.AddWithValue("$zipcode", zipcodeTextChange.Text);
 
-                                                if (emailTextChange.Text == "")
+                                                if (cityTextChange.Text == "")
                                                 {
-                                                    MessageBox.Show("Enter an email");
+                                                    MessageBox.Show("Enter a city");
                                                     return;
                                                 }
                                                 else
                                                 {
-                                                    command.Parameters.AddWithValue("$email", emailTextChange.Text);
+                                                    command.Parameters.AddWithValue("$city", cityTextChange.Text);
 
-                                                    if (imageTextChange.Text == "")
+                                                    if (emailTextChange.Text == "")
                                                     {
-                                                        MessageBox.Show("Enter a image");
+                                                        MessageBox.Show("Enter an email");
                                                         return;
                                                     }
                                                     else
                                                     {
-                                                        command.Parameters.AddWithValue("$image", imageTextChange.Text);
+                                                        command.Parameters.AddWithValue("$email", emailTextChange.Text);
 
-                                                        if (teamTextChange.Text == null)
+                                                        if (imageTextChange.Text == "")
                                                         {
-                                                            MessageBox.Show("Enter a team");
+                                                            MessageBox.Show("Enter a image");
                                                             return;
                                                         }
                                                         else
                                                         {
-                                                            command.Parameters.AddWithValue("$teamId", id);
+                                                            command.Parameters.AddWithValue("$image", imageTextChange.Text);
+
+                                                            if (teamTextChange.Text == null)
+                                                            {
+                                                                MessageBox.Show("Enter a team");
+                                                                return;
+                                                            }
+                                                            else
+                                                            {
+                                                                command.Parameters.AddWithValue("$teamId", id);
+                                                            }
                                                         }
                                                     }
                                                 }
@@ -282,27 +300,27 @@ namespace DevOpsApplication
                                         }
                                     }
                                 }
+
+                                command.ExecuteNonQuery();
+
+                                MessageBox.Show("The member " + firstnameTextChange.Text + " " + lastnameTextChange.Text + " has been added");
+
+                                firstnameTextChange.Clear();
+                                lastnameTextChange.Clear();
+                                addressTextChange.Clear();
+                                zipcodeTextChange.Clear();
+                                cityTextChange.Clear();
+                                emailTextChange.Clear();
+                                teamTextChange.Clear();
+                                imageTextChange.Clear();
                             }
-
-                            command.ExecuteNonQuery();
-
-                            MessageBox.Show("The member " + firstnameTextChange.Text + " " + lastnameTextChange.Text + " has been added");
-
-                            firstnameTextChange.Clear();
-                            lastnameTextChange.Clear();
-                            addressTextChange.Clear();
-                            zipcodeTextChange.Clear();
-                            cityTextChange.Clear();
-                            emailTextChange.Clear();
-                            teamTextChange.Clear();
-                            imageTextChange.Clear();
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No team found with this id");
-                    }
+                        else
+                        {
+                            MessageBox.Show("No team found with this id");
+                        }
 
+                    }
                 }
             }
         }
@@ -312,6 +330,29 @@ namespace DevOpsApplication
             using (var connection = new SqliteConnection("Data Source=Datafile.db"))
             {
                 connection.Open();
+
+                if (firstnameTextChange.Text == "")
+                {
+                    MessageBox.Show("Enter a firstname");
+                    return;
+                }
+                else
+                {
+                    if (lastnameTextChange.Text == "")
+                    {
+                        MessageBox.Show("Enter a lastname");
+                        return;
+                    }
+
+                    else
+                    {
+                        if (addressTextChange.Text == "")
+                        {
+                            MessageBox.Show("Enter an address");
+                            return;
+                        }
+                    }
+                }
 
                 var command = connection.CreateCommand();
                 command.CommandText =
@@ -339,16 +380,6 @@ namespace DevOpsApplication
             informationList.Items.Clear();
             imgMember.Visibility = Visibility.Hidden;
             imgMember.Source = null;
-        }
-
-        private void informatie_MouseEnter(object sender, MouseEventArgs e)
-        {
-            
-        }
-
-        private void informatie_MouseLeave(object sender, MouseEventArgs e)
-        {
-           
         }
 
         private void informatie_GotFocus(object sender, RoutedEventArgs e)
