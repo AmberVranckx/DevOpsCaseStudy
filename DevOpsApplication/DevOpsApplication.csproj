@@ -16,6 +16,7 @@
     <None Remove="jack.png" />
     <None Remove="jef.png" />
     <None Remove="liam.png" />
+    <None Remove="lies.png" />
     <None Remove="lucas.png" />
     <None Remove="mila.png" />
     <None Remove="noor.png" />
@@ -39,6 +40,7 @@
     <Resource Include="jack.png" />
     <Resource Include="jef.png" />
     <Resource Include="liam.png" />
+    <Resource Include="lies.png" />
     <Resource Include="lucas.png" />
     <Resource Include="mila.png" />
     <Resource Include="noor.png" />
